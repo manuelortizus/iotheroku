@@ -10,6 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Envía la respuesta al cliente (ESP32)
     echo "Hola $user tu clave es $pass";
+    echo "Hola";
+    echo $user;
 }
 else {
     // Si no es un POST, devolver error 405 (Método no permitido)
