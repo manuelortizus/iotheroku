@@ -1,4 +1,13 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+ini_set('display_errors' , 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 /*
 // Verifica si la solicitud es de tipo POST
 
@@ -21,7 +30,7 @@ else {
 
 */
 
-try {
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $_POST['user'];
 
@@ -32,8 +41,7 @@ try {
         echo "Method not allowed"
     }
 
-    
-}
+
 catch (Exception $e) {
     http_response_code(500);
     echo "Server error: " . $e->getMessage();
