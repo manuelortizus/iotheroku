@@ -1,5 +1,5 @@
 <?php
-
+/*
 // Verifica si la solicitud es de tipo POST
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,11 +19,13 @@ else {
     echo "Metodo no permitido";
 }
 
-/*
+*/
+
+
 $user = $_POST['user'];
 $password = $_POST['pass'];
 
 echo "Hola ".$user." tu clave es ".$password;
-*/
+
 
 ?>
