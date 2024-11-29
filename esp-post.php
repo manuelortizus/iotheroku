@@ -21,7 +21,25 @@ else {
 
 */
 
+try {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $user = $_POST['user'];
 
+        echo "Datos recibidos: Usuario = $user";
+    }
+    else{
+        http_response_code(405); // Método no permitido
+        echo "Method not allowed"
+    }
+
+    
+}
+catch (Exception $e) {
+    http_response_code(500);
+    echo "Server error: " . $e->getMessage();
+}
+
+/*
 $user = $_POST['user'];
 $password = $_POST['pass'];
 
@@ -32,4 +50,6 @@ echo "Mi nombres es";
 echo $user;
 
 
+?>
+*/
 ?>
