@@ -5,13 +5,15 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtiene los datos de los parametros 'user' y 'pass' del cuerpo del POST
 
-    $user = isset($_POST['user']) ? $_POST['user'] : 'Desconocido';
-    $pass = isset($_POST['pass']) ? $_POST['pass'] : 'Desconocida';
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
 
     // Envía la respuesta al cliente (ESP32)
     echo "Hola $user tu clave es $pass";
 }
 else {
+    // Si no es un POST, devolver error 405 (Método no permitido)
+    header('HTTP/1.1 405 Method Not Allowed');
     echo "Metodo no permitido";
 }
 
