@@ -25,7 +25,9 @@ else {
 $user = $_POST['user'];
 $password = $_POST['pass'];
 
-echo "Hola ".$user." tu clave es ".$password;
+echo "Hola ".$user;
+echo "Mi nombres es";
+echo $user;
 
 
 ?>
